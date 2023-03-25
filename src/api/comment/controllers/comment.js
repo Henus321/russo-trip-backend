@@ -20,6 +20,9 @@ module.exports = createCoreController("api::comment.comment", ({ strapi }) => ({
       response.data.id,
       { data: { user: user.id } }
     );
-    return updatedResponse;
+
+    const sanitizedEntries = await this.sanitizeOutput(updatedResponse, ctx);
+
+    return this.transformResponse(sanitizedEntries);
   },
 }));

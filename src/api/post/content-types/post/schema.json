@@ -21,9 +21,6 @@
     "date": {
       "type": "date"
     },
-    "description": {
-      "type": "richtext"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -44,6 +41,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "posts"
+    },
+    "description": {
+      "type": "text"
+    },
+    "markdown": {
+      "type": "richtext"
     }
   }
 }
